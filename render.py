@@ -9,8 +9,10 @@ def meshFullSTL():
     mesh = Mesh.from_file(path)
 
     vpl.mesh_plot(mesh)
-    vpl.view(camera_direction=[-1, 1, 1])
-    vpl.reset_camera()
+    vpl.view(camera_position=[160, 800, 400], focal_point=[0, 0, 0], up_view=[-1, -1, 1])
+    #camera_position=[600, 600, 500]
+    #, camera_direction=[0, -15, 1]
+    #vpl.reset_camera()
     #vpl.show()
     vpl.save_fig("image.jpg", pixels=(600,600), off_screen=True)
 
