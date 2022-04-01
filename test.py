@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import json
 import time
+import picamera
 
 # Set WebDrivers
 statusDriver = webdriver.Chrome()
@@ -94,7 +95,9 @@ while(status == "P"):
 		resumeDriver.refresh()
 		time.sleep(4)
 
-		# Take picture here
+		with picamera.PiCamera() as camera:
+			camera.resolution = (1280, 720)
+			camera.capture("/home/pi/Desktop/test.jpg")
 		print("picture")
 
 		# Stay here while it is resuming
